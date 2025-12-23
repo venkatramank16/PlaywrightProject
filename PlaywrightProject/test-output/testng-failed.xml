@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Automation Suite]">
+  <listeners>
+    <listener class-name="listeners.TestListener"/>
+    <listener class-name="listeners.RetryListener"/>
+    <listener class-name="listeners.LogListener"/>
+  </listeners>
+  <test thread-count="5" name="UI Tests - Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="api.UserApiTest">
+        <methods>
+          <include name="setupBeforeClass"/>
+          <include name="createUserTest"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- api.UserApiTest -->
+    </classes>
+  </test> <!-- UI Tests - Chrome(failed) -->
+</suite> <!-- Failed suite [Automation Suite] -->

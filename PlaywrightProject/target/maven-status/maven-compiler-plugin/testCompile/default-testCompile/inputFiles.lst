@@ -1,0 +1,11 @@
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\api\UserApiTest.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\ui\BaseTest.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\ui\LoginTest.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\utils\AssertionUtil.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\base\APIBase.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\ui\RegistrationTest.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\listeners\TestListener.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\listeners\RetryListener.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\utils\SoftAssertUtil.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\base\RetryAnalyzer.java
+D:\Workspace\Playwright Project\PlaywrightProject\src\test\java\listeners\LogListener.java
