@@ -28,12 +28,15 @@ public class BaseTest {
     }
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
-    public void setUp(@Optional("chrome") String browser, Method method) {
+    public void setUp(@Optional("chrome") String browser, Method method, ITestResult result) {
 
         boolean headless = Boolean.parseBoolean(ConfigReader.getProperty("headless"));
+        int retryCount = result.getAttribute("retryCount") == null
+                ? 0
+                : (int) result.getAttribute("retryCount");
 
+        PlaywrightFactory.initBrowser(browser, headless,  retryCount);
 
-        PlaywrightFactory.initBrowser(browser, headless);
         page = PlaywrightFactory.getPage();
 
       

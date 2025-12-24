@@ -21,7 +21,7 @@ public class PlaywrightFactory {
     private static final ThreadLocal<Video> videoThread = new ThreadLocal<>();
     private static Playwright playwright;
 
-    public static void initBrowser(String browserName, boolean headless) {
+    public static void initBrowser(String browserName, boolean headless,int retryCount) {
         if (playwright == null) {
             playwright = Playwright.create();
         }
@@ -45,7 +45,7 @@ public class PlaywrightFactory {
 
         Browser.NewContextOptions contextOptions = new Browser.NewContextOptions();
 
-        if (recordVideo) {
+        if (recordVideo&retryCount == 2) {
             contextOptions.setRecordVideoDir(Paths.get(videoDir));
             contextOptions.setRecordVideoSize(1280, 720);
         }

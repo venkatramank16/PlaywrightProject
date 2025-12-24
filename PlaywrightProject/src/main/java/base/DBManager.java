@@ -17,6 +17,28 @@ public class DBManager {
         }
     }
 
+
+    public  void uploadBulkExcelIntoDB(List<HashMap<String,String>> excelData,String query,String[] columnList){
+
+
+        try{
+            PreparedStatement ps = conn.prepareStatement(query);
+
+            for(HashMap<String,String> m:excelData){
+                int i=1;
+                for (Map.Entry<String, String> entry : m.entrySet()) {
+
+                    ps.setString(i,entry.getValue());
+                    i++;
+                }
+ps.executeUpdate();
+            }
+            System.out.println("Data loaded successfully!");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
     public List<Map<String, String>> getTestData(String query) {
         List<Map<String, String>> dataList = new ArrayList<>();
 
