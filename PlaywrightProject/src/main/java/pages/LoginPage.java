@@ -10,9 +10,9 @@ public class LoginPage extends BasePage {
 
 	
 
-	private final String usernameInput = "#email";
-	private final String passwordInput = "#password";
-	private final String loginButton = "//button[text()='Login']";
+	private final String usernameInput = "//input[@name='username']";
+	private final String passwordInput = "//input[@name='password']";
+	private final String loginButton = "//input[@value='Log In']";
 
 	public LoginPage(Page page) {
 		super(page);

@@ -1,5 +1,6 @@
 package base;
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -56,26 +57,33 @@ public class PlaywrightFactory {
         Page page = context.newPage();
         pageThread.set(page);
 
-        if (recordVideo) {
+        if (recordVideo&retryCount == 2) {
             videoThread.set(page.video());
         }
     }
     
-    public static String saveVideo(String testName) {
+    public static void saveVideo(String testName) {
         try {
             Video video = videoThread.get();
-            if (video == null) return null;
+            //if (video == null) return null;
 
-            Path tempPath = video.path();
-            String videoDir = ConfigReader.getProperty("video.dir");
-            Path finalPath = Paths.get(videoDir + testName + ".webm");
+//            Path tempPath = video.path();
+//            String videoDir = ConfigReader.getProperty("video.dir");
+//            Path finalPath = Paths.get(videoDir + testName + ".webm");
+//
+//            // Ensure video exists before moving
+//            video.saveAs(finalPath);
 
-            // Ensure video exists before moving
-            video.saveAs(finalPath);
-            return finalPath.toString();
+            //Video video = pageThread.get().video();
+            if (video != null) {
+                Path path = video.path();
+                path.toFile().renameTo(
+                        new File("videos/" + testName + ".webm")
+                );
+           // return finalPath.toString();
 
-        } catch (Exception e) {
-            return null;
+        }} catch (Exception e) {
+            //return null;
         }
     }
 

@@ -47,6 +47,7 @@ public class BaseTest {
       
         
        page.close();
+        PlaywrightFactory.saveVideo(result.getName());
         
     }
     

@@ -32,12 +32,12 @@ public class TestListener implements ITestListener {
 
         try {
         	String testName = result.getMethod().getMethodName();
-            String videoPath = PlaywrightFactory.saveVideo(testName);
+           // String videoPath = PlaywrightFactory.saveVideo(testName);
 
-            if (videoPath != null) {
+           // if (videoPath != null) {
                // ExtentLogger.fail("Video Recorded: " + videoPath);
                // ExtentTestManager.getTest().addScreenCaptureFromPath(videoPath);
-            }
+            //}
         } catch (Exception e) {
             e.printStackTrace();
         }
