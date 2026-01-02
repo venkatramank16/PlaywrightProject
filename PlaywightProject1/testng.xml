@@ -1,0 +1,18 @@
+<suite name="Automation Suite">
+<!--	parallel="tests"-->
+<!--	thread-count="4">-->
+	<listeners>
+		<listener class-name="listeners.TestListener" />
+		<listener class-name="listeners.RetryListener" />
+		<listener class-name="listeners.LogListener" />
+	</listeners>
+	<!-- UI Tests -->
+	<test name="UI Tests - Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			           <class name="ui.LoginTest"/>
+<!-- 			            <class name="ui.RegistrationTest"/> -->
+<!--			<class name="api.UserApiTest" />-->
+		</classes>
+	</test>
+</suite>
