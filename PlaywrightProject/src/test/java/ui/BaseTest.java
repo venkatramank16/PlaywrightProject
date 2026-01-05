@@ -10,14 +10,15 @@ import config.ConfigReader;
 import java.io.File;
 import java.lang.reflect.Method;
 
+import listeners.TestListener;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import reporting.ExtentTestManager;
-
+@Listeners(TestListener.class)
 public class BaseTest {
 
     protected Page page;
-
+    String testname=null;
     @BeforeSuite
     public void beforeSuite() {
     	File f=new File(System.getProperty("user.dir")+"\\reports\\videos");
@@ -38,7 +39,7 @@ public class BaseTest {
         PlaywrightFactory.initBrowser(browser, headless,  retryCount);
 
         page = PlaywrightFactory.getPage();
-
+testname=result.getTestName();
       
     }
 
@@ -53,7 +54,7 @@ public class BaseTest {
     
     @AfterSuite
     public void endSuite() {
-    	  ExtentTestManager.endTest();
+    	 // ExtentTestManager.endTest();
     	 PlaywrightFactory.closeBrowser();
     }
 }

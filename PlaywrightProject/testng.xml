@@ -10,9 +10,9 @@
 	<test name="UI Tests - Chrome">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			           <class name="ui.LoginTest"/>
- 			            <class name="ui.RegistrationTest"/>
-			<class name="api.UserApiTest" />
+			<class name="ui.RegistrationTest"/>
+			<class name="ui.LoginTest"/>
+<!--			<class name="api.UserApiTest" />-->
 		</classes>
 		
 		

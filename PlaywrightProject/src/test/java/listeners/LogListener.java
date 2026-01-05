@@ -11,22 +11,22 @@ public class LogListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        System.out.println("[START] " + result.getMethod().getMethodName());
+        System.out.println("[START] " + result.getMethod().getDescription());
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        System.out.println("[PASS] " + result.getMethod().getMethodName());
+        System.out.println("[PASS] " + result.getMethod().getDescription());
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println("[FAIL] " + result.getMethod().getMethodName() + " - " + result.getThrowable());
+        System.out.println("[FAIL] " + result.getMethod().getDescription() + " - " + result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        System.out.println("[SKIPPED] " + result.getMethod().getMethodName());
+        System.out.println("[SKIPPED] " + result.getMethod().getDescription());
     }
 
     @Override
