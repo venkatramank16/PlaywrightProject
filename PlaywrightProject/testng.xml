@@ -12,6 +12,7 @@
 		<classes>
 			<class name="ui.RegistrationTest"/>
 			<class name="ui.LoginTest"/>
+			<class name="ui.AccountCreationTest"/>
 <!--			<class name="api.UserApiTest" />-->
 		</classes>
 		
